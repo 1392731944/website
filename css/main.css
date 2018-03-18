@@ -126,7 +126,10 @@ header{
 	margin-right: 10px;
 }
 .seller{
-	background-color: #F5F5F5;
+	/*background-color: #F5F5F5;*/
+	background-color: green;
+	padding-bottom: 80px;
+	margin-bottom: 40px;
 }
 .seller-wrap{
 	width: 1200px;
@@ -171,6 +174,43 @@ header{
 .seller .bg.active{
 	background-position: -86px;
 }
+.common-carousel{
+	width: 1200px;
+	height: 170px;
+	background-color: green;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+}
+.common-carousel ul{
+	width: 2340px;
+	height: 200px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.common-carousel ul > li{
+	float: left;
+}
+.common-carousel ul > li .title{
+	font-size: 22px;
+	color: #4D4D4D;
+	text-align: center;
+}
+#solution-carousel{
+	margin-top: 50px;
+}
+.carouselActive{
+	box-shadow: 0 2px 20px yellow;
+	transform: scale(1.02);
+	position: relative;
+
+}
+.common-carousel .btn{width: 30px;height: 50px;background: rgba(0,0,0,0.5);position: absolute;top: 50%;margin-top: -25px;cursor: pointer;
+			text-align: center;line-height: 50px;color: #fff;font-size: 40px;font-family: "宋体";display: none;}
+.common-carousel:hover .btn{display: block;}
+.common-carousel .btn_l{left: 0;}
+.common-carousel .btn_r{right: 0;}
 .buyers{
 	background-color: #fff;
 }
@@ -190,6 +230,21 @@ header{
 	height: 100px;
 	background-color: #E7E7E7;
 	border-radius: 50%;
+	margin: 0 auto;
+}
+.successfulCases{
+	background-color: #F5F5F5;
+}
+.successfulCases-wrap{
+	width: 1200px;
+	height: 270px;
+	margin: 0 auto;
+	/*background-color: #fff;*/
+	background-color: red;
+	text-align: center;
+}
+.successfulCases-wrap .text{
+	color: #0457B7;
 }
 /* 页脚 */
 .footer-top-wrap{
