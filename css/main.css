@@ -176,11 +176,13 @@ header{
 }
 .common-carousel{
 	width: 1200px;
-	height: 170px;
-	background-color: green;
+	background-color: red;
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+}
+#solution-carousel{
+	height: 170px;
 }
 .common-carousel ul{
 	width: 2340px;
@@ -240,11 +242,17 @@ header{
 	height: 270px;
 	margin: 0 auto;
 	/*background-color: #fff;*/
-	background-color: red;
+	/* background-color: red; */
 	text-align: center;
 }
 .successfulCases-wrap .text{
 	color: #0457B7;
+}
+#Cases-carousel{
+	height: 270px;
+}
+#Cases-carousel ul li{
+	/*padding-right: 60px;*/
 }
 /* 页脚 */
 .footer-top-wrap{

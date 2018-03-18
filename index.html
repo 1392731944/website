@@ -253,7 +253,7 @@
 					<ul class="clearfix imgWrap">
 						<li>
 							<a href="#">
-								<img src="image/index-fa-img1.jpg" alt="">
+								<img src="image/index-al-img1.jpg" alt="">
 								<div class="text">
 									<div class="title">红酒解决方案</div>
 									<div class="des">摘要（简略介绍）</div>
@@ -262,7 +262,7 @@
 						</li>
 						<li>
 							<a href="#">
-								<img src="image/index-fa-img2.jpg" alt="">
+								<img src="image/index-al-img2.jpg" alt="">
 								<div class="text">
 									<div class="title">肉类冷链解决方案</div>
 									<div class="des">摘要（简略介绍）</div>
@@ -271,7 +271,7 @@
 						</li>
 						<li>
 							<a href="#">
-								<img src="image/index-fa-img3.jpg" alt="">
+								<img src="image/index-al-img3.jpg" alt="">
 								<div class="text">
 									<div class="title">陶瓷玻璃易碎品解决方案</div>
 									<div class="des">摘要（简略介绍）</div>
@@ -356,59 +356,57 @@
 		</div>
 	</footer>
 	<script type="text/javascript">
-		function innitCarousel() {
+		function innitCarousel(ID) {
 			var i=0;
-			var clone=$(".common-carousel ul").html();
-			$(".common-carousel ul").append(clone);
-			var size=$(".common-carousel ul li").length;
-			var imgOuterWidth = $(".common-carousel ul li img").outerWidth();
-			// var imgOuterHeight = $(".common-carousel ul li img").outerHeight();
-			$('.common-carousel').css({
-				'width':imgOuterWidth*3
+			var carousel = $(ID);
+			var itemWrap = carousel.find('ul')
+			var clone=itemWrap.html();
+			itemWrap.append(clone);
+			var size=itemWrap.find("li").length;
+			var itemOuterWidth = itemWrap.find("li").outerWidth();
+			carousel.css({
+				"width":itemOuterWidth*3
 			})
 			/*自动轮播*/
 			var t=setInterval(moveL,2000)
-			/*鼠标划入banner轮播停止*/
-			// $(".common-carousel").hover(function(){
-			// 	clearInterval(t);
-			// 	$(this).addClass('carouselActive')
-			// },function(){
-			// 	t=setInterval(moveL,2000)
-			// })
-			$('.common-carousel ul li').hover(function(){
-				$(this).addClass('carouselActive').siblings().removeClass('carouselActive')
-				clearInterval(t);
+			itemWrap.find("li").hover(function(){
+				$(this).addClass("carouselActive").siblings().removeClass("carouselActive")
 			},function(){
-				$('.common-carousel ul li').removeClass('carouselActive')
+				itemWrap.find("li").removeClass('carouselActive')
+			})
+			carousel.hover(function () {
+				clearInterval(t)
+			},function () {
 				t=setInterval(moveL,2000)
 			})
 			/*向左的按钮*/
-			$(".common-carousel .btn_l").click(function(){
+			carousel.find(".btn_l").click(function(){
 				moveL();
 			})
 			function moveL(){
 				i++;
 				if (i==size-2) {
-					$(".common-carousel ul").css({left:0})
+					itemWrap.css({left:0})
 					i=1;
 				};
-				$(".common-carousel ul").stop().animate({left:-i*390},500)
+				itemWrap.stop().animate({left:-i*itemOuterWidth},500)
 			}
 			/*向右的按钮*/
-			$(".common-carousel .btn_r").click(function(){
+			carousel.find(".btn_r").click(function(){
 				moveR();	
-				})
+			})
 			function moveR(){
 					i--;
 					if (i==-1) {
-						$(".common-carousel ul").css({left:-3*390})
+						itemWrap.css({left:-3*itemOuterWidth})
 						i=2;
 					};
-					$(".common-carousel ul").stop().animate({left:-i*390},500)
+					itemWrap.stop().animate({left:-i*itemOuterWidth},500)
 			}
 		}
 		window.onload = function(){
-			innitCarousel();
+			innitCarousel("#solution-carousel");
+			innitCarousel("#Cases-carousel");
 			$('#login-btn').mouseover(function () {
 				$('#register-entry-type').hide();
 				$('#login-entry-type').show();
