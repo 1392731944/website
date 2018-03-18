@@ -186,28 +186,34 @@
 					<ul class="clearfix imgWrap">
 						<li>
 							<a href="#">
-								<img src="image/index-fa-img1.jpg" alt="">
-								<div class="text">
-									<div class="title">红酒解决方案</div>
-									<div class="des">摘要（简略介绍）</div>
+								<div class="imgText" style="background-color: #fff">
+									<img src="image/index-fa-img1.jpg" alt="">
+									<div class="text">
+										<div class="title">红酒解决方案</div>
+										<div class="des">摘要（简略介绍）</div>
+									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="image/index-fa-img2.jpg" alt="">
-								<div class="text">
-									<div class="title">肉类冷链解决方案</div>
-									<div class="des">摘要（简略介绍）</div>
+								<div class="imgText" style="background-color: #fff">
+									<img src="image/index-fa-img2.jpg" alt="">
+									<div class="text">
+										<div class="title">肉类冷链解决方案</div>
+										<div class="des">摘要（简略介绍）</div>
+									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="image/index-fa-img3.jpg" alt="">
-								<div class="text">
-									<div class="title">陶瓷玻璃易碎品解决方案</div>
-									<div class="des">摘要（简略介绍）</div>
+								<div class="imgText" style="background-color: #fff">
+									<img src="image/index-fa-img3.jpg" alt="">
+									<div class="text">
+										<div class="title">陶瓷玻璃易碎品解决方案</div>
+										<div class="des">摘要（简略介绍）</div>
+									</div>
 								</div>
 							</a>
 						</li>
@@ -253,28 +259,34 @@
 					<ul class="clearfix imgWrap">
 						<li>
 							<a href="#">
-								<img src="image/index-al-img1.jpg" alt="">
-								<div class="text">
-									<div class="title">红酒解决方案</div>
-									<div class="des">摘要（简略介绍）</div>
+								<div class="imgText" style="background-color: #fff">
+									<img src="image/index-al-img1.jpg" alt="">
+									<div class="text">
+										<div class="title">红酒解决方案</div>
+										<div class="des">摘要（简略介绍）</div>
+									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="image/index-al-img2.jpg" alt="">
-								<div class="text">
-									<div class="title">肉类冷链解决方案</div>
-									<div class="des">摘要（简略介绍）</div>
+								<div class="imgText" style="background-color: #fff">
+									<img src="image/index-al-img2.jpg" alt="">
+									<div class="text">
+										<div class="title">肉类冷链解决方案</div>
+										<div class="des">摘要（简略介绍）</div>
+									</div>
 								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="image/index-al-img3.jpg" alt="">
-								<div class="text">
-									<div class="title">陶瓷玻璃易碎品解决方案</div>
-									<div class="des">摘要（简略介绍）</div>
+								<div class="imgText" style="background-color: #fff">
+									<img src="image/index-al-img3.jpg" alt="">
+									<div class="text">
+										<div class="title">陶瓷玻璃易碎品解决方案</div>
+										<div class="des">摘要（简略介绍）</div>
+									</div>
 								</div>
 							</a>
 						</li>
@@ -364,15 +376,19 @@
 			itemWrap.append(clone);
 			var size=itemWrap.find("li").length;
 			var itemOuterWidth = itemWrap.find("li").outerWidth();
+			debugger
 			carousel.css({
 				"width":itemOuterWidth*3
 			})
+			itemWrap.css({
+				"width":itemOuterWidth*size
+			})
 			/*自动轮播*/
 			var t=setInterval(moveL,2000)
-			itemWrap.find("li").hover(function(){
+			itemWrap.find(".imgText").hover(function(){
 				$(this).addClass("carouselActive").siblings().removeClass("carouselActive")
 			},function(){
-				itemWrap.find("li").removeClass('carouselActive')
+				itemWrap.find(".imgText").removeClass('carouselActive')
 			})
 			carousel.hover(function () {
 				clearInterval(t)
@@ -406,7 +422,7 @@
 		}
 		window.onload = function(){
 			innitCarousel("#solution-carousel");
-			innitCarousel("#Cases-carousel");
+			innitCarousel("#Cases-carousel","padding");
 			$('#login-btn').mouseover(function () {
 				$('#register-entry-type').hide();
 				$('#login-entry-type').show();

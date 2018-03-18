@@ -176,7 +176,7 @@ header{
 }
 .common-carousel{
 	width: 1200px;
-	background-color: red;
+	/*background-color: red;*/
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
@@ -208,11 +208,29 @@ header{
 	position: relative;
 
 }
-.common-carousel .btn{width: 30px;height: 50px;background: rgba(0,0,0,0.5);position: absolute;top: 50%;margin-top: -25px;cursor: pointer;
-			text-align: center;line-height: 50px;color: #fff;font-size: 40px;font-family: "宋体";display: none;}
-.common-carousel:hover .btn{display: block;}
-.common-carousel .btn_l{left: 0;}
-.common-carousel .btn_r{right: 0;}
+.common-carousel .btn{
+	width: 30px;
+	height: 50px;
+	background: rgba(0,0,0,0.5);
+	position: absolute;top: 50%;
+	margin-top: -25px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 40px;
+	font-family: "宋体";
+	display: none;
+}
+.common-carousel:hover .btn{
+	display: block;
+}
+.common-carousel .btn_l{
+	left: 0;
+}
+.common-carousel .btn_r{
+	right: 0;
+}
 .buyers{
 	background-color: #fff;
 }
@@ -252,7 +270,10 @@ header{
 	height: 270px;
 }
 #Cases-carousel ul li{
-	/*padding-right: 60px;*/
+	padding-right: 60px;
+}
+#Cases-carousel .btn_r{
+	right: 60px;
 }
 /* 页脚 */
 .footer-top-wrap{
