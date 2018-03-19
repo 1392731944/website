@@ -9,7 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="icon/iconfont.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" href="css/swiper.min.css">
 	<!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -492,7 +491,7 @@
 					itemWrap.css({left:0})
 					i=1;
 				};
-				itemWrap.stop().animate({left:-i*itemOuterWidth},1000)
+				itemWrap.stop().animate({left:-i*itemOuterWidth},500)
 			}
 			/*向右的按钮*/
 			carousel.find(".btn_r").click(function(){
@@ -504,7 +503,7 @@
 						itemWrap.css({left:-3*itemOuterWidth})
 						i = 2;
 					};
-					itemWrap.stop().animate({left:-i*itemOuterWidth},1000)
+					itemWrap.stop().animate({left:-i*itemOuterWidth},500)
 			}
 		}
 		window.onload = function(){
@@ -542,6 +541,5 @@
 	</script>
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/swiper.min.js"></script>
 </body>
 </html>
